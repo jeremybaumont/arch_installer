@@ -7,7 +7,7 @@
 set -euo pipefail
 
 url-installer() {
-    echo "https://raw.githubusercontent.com/jeremybaumont/arch_installer/master"
+    echo "https://raw.githubusercontent.com/jeremybaumont/arch_installer/main"
 }
 
 run() {
@@ -61,25 +61,16 @@ run() {
         && log INFO "ERASE DISK" "$output" \
         && erase-disk "$wiper" "$disk"
 
-    [[ "$dry_run" = false && "$is_encrypt" = 1 ]] \
-        && log INFO "CREATE PARTITIONS" "$output" \
-        && fdisk-partition "$disk" "$(boot-partition "$(is-uefi)")" "$swap_size" "$(main-partition "$is_encrypt")"
+    [[ "$dry_run" = false ]] \
+      && log INFO "CREATE PARTITIONS" "$output" \
+      && create-partitions "$is_encrypt" "$is_uefi" "$hd" "$swap_size"
 
-    [[ "$dry_run" = false && "$is_encrypt" = 0 ]] \
-        && log INFO "CREATE PARTITIONS FOR ENCRYPTION" "$output" \
-        && encrypt-fdisk-partition "$disk" "$(boot-partition "$(is-uefi)")" "$(main-partition "$is_encrypt")"
-
-    [[ "$dry_run" = false && "$is_encrypt" = 1 ]] \
-        && log INFO "FORMAT PARTITIONS" "$output" \
-        && format-partitions "$disk" "$(is-uefi)"
-    
-    [[ "$dry_run" = false && "$is_encrypt" = 0 ]] \
-        && log INFO "ENCRYPT AND FORMAT PARTITIONS" "$output" \
-        && encrypt-format-partitions "$disk" "$swap_size" "$(is-uefi)"
-
+    [[ "$dry_run" = false ]] \
+      && log INFO "FORMAT PARTITIONS" "$output" \
+      && format-partitions "$is_encrypt" "$is_uefi" "$hd" "$swap_size"
 
     log INFO "CREATE VAR FILES" "$output"
-    echo "$(is-uefi)" > /mnt/var_uefi
+    echo "$(is_uefi)" > /mnt/var_uefi
     echo "$(is_encrypt)" > /mnt/var_encrypt
     echo "$disk" > /mnt/var_disk
     echo "$hostname" > /mnt/var_hostname
@@ -127,7 +118,7 @@ dialog-name-of-computer() {
     dialog --no-cancel --inputbox "Enter a name for your computer." 10 60 2> "$file"
 }
 
-is-uefi() {
+is_uefi() {
     local uefi=0
     ls /sys/firmware/efi/efivars &> /dev/null && uefi=1
 
@@ -283,12 +274,29 @@ EOF
 }
 
 dialog-encryption-password() {
-    local file=${1:?}
+    local password_file=${1:?}
     dialog --title "HARD DISK ENCRYPTION PASSWORD" \
     --passwordbox "Enter the password to encrypt the hard disk." 10 60 2> "$file"
+
+    dialog --title "HARD DISK ENCRYPTION PASSWORD" \
+      --no-cancel --passwordbox "Enter your password" 10 60 2> $password_file
+    dialog --title "HARD DISK ENCRYPTION PASSWORD" \ 
+      --no-cancel --passwordbox "Enter your password again. To be sure..." 10 60 2> password_temp
+
+    while [ "$(cat $password_file)" != "$(cat password_temp)" ]
+    do
+        dialog --title "HARD DISK ENCRYPTION PASSWORD" \ 
+          --no-cancel --passwordbox "Passwords do not match.\n\nEnter password again." 10 60 2> $password_file
+        dialog --title "HARD DISK ENCRYPTION PASSWORD" \ 
+          --no-cancel --passwordbox "Retype password." 10 60 2> password_temp
+    done
+    $password_file=$(cat $password_file)
+
+    rm password_temp
+
 }
 
-format-partitions() {
+unencrypt-format-partitions() {
     local hd=${1:?}
     local -r uefi=${2:?}
 
@@ -341,8 +349,38 @@ encrypt-format-partitions() {
     fi
 }
 
+create-partitions() {
+    local -r is_encrypt=${1:?}
+    local -r is_uefi=${2:?}
+    local -r disk=${3:?}
+    local -r swap_size=${4:?}
+
+    [[ "$is_encrypt" = 1 ]] \
+      && log INFO "CREATE PARTITIONS" "$output" \
+      && fdisk-partition "$disk" "$(boot-partition $is_uefi)" "$swap_size" "$(main-partition $is_encrypt)"
+
+    [[ "$is_encrypt" = 0 ]] \
+      && log INFO "CREATE PARTITIONS FOR ENCRYPTION" "$output" \
+      && encrypt-fdisk-partition "$disk" "$(boot-partition $is_uefi)" "$(main-partition $is_encrypt)"
+}
+
+format-partitions() {
+    local -r is_encrypt=${1:?}
+    local -r is_uefi=${2:?}
+    local -r disk=${3:?}
+    local -r swap_size=${4:?}
+
+    [[ "$is_encrypt" = 1 ]] \
+        && log INFO "FORMAT PARTITIONS" "$output" \
+        && unencrypt-format-partitions "$disk" "$is_uefi"
+    
+    [[ "$is_encrypt" = 0 ]] \
+        && log INFO "ENCRYPT AND FORMAT PARTITIONS" "$output" \
+        && encrypt-format-partitions "$disk" "$swap_size" "$is_uefi"
+}
+
 install-arch-linux() {
-    pacstrap /mnt base base-devel linux linux-firmware linux-lts lvm2 man-db man-pages texinfo vim networkmanager wpa_supplicant
+    pacstrap /mnt base base-devel linux linux-firmware lvm2 man-db man-pages texinfo vim networkmanager wpa_supplicant
     genfstab -U /mnt >> /mnt/etc/fstab
 }
 

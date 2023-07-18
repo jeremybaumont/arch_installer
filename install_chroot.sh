@@ -12,22 +12,21 @@ run() {
     hd=$(cat /var_disk)
     hostname=$(cat /var_hostname)
     url_installer=$(cat /var_url_installer)
-    dry_run=$(cat /var_dry_run)
     encrypt=$(cat /var_encrypt)
     my_locale="en_US.UTF-8"
     my_lang="en"
+    my_encoding="UTF-8"
 
     log INFO "INSTALL DIALOG" "$output"
     install-dialog
 
-    log INFO "INSTALL GRUB ON $hd WITH UEFI $uefi" "$output"
-    install-grub "$hd" "$uefi"
+    log INFO "INSTALL BOOTLOADER" "$output"
+    install-bootloader "$encrypt" "$hd" "$uefi" "$my_locale" "$my_lang"
 
     log INFO "SET HARDWARE CLOCK" "$output"
     set-hardware-clock
 
     log INFO "SET TIMEZONE" "$output"
-
     ln -sf /usr/share/zoneinfo/Australia/Sydney /etc/localtime
     hwclock --systohc
 
@@ -38,7 +37,7 @@ run() {
     add-hostname-hosts "$hostname"
 
     log INFO "CONFIGURE LOCALE AND KEYBOARD LAYOUT" "$output"
-    configure-locale-keymap "$my_locale" "UTF-8" "$my_lang"
+    configure-locale-keymap "$my_locale" "$my_encoding" "$my_lang"
 
     log INFO "ADD ROOT" "$output"
     dialog --title "root password" --msgbox "It's time to add a password for the root user" 10 60
@@ -109,13 +108,12 @@ install-systemd-boot() {
     write-boot-loader-configuration $boot_dir/loader/loader.conf
     write-boot-loader-arch-profile $hd $boot_dir/loader/entries/arch.conf $locale $lang
     write-boot-loader-arch-lts-profile $hd $boot_dir/loader/entries/arch-lts.conf $locale $lang
-
 }
 
 write-boot-loader-configuration() {
     local -r file=${1:?}
 
-    cat <<'EOF' > $file
+    cat <<EOF > "$file"
 #timeout 3
 #console-mode keep
 default arch
@@ -131,7 +129,7 @@ write-boot-loader-arch-profile(){
     local -r locale=${3:?}
     local -r lang=${4:?}
 
-    cat <<'EOF' > $file
+    cat <<EOF > "$file"
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
@@ -145,12 +143,35 @@ write-boot-loader-arch-lts-profile(){
     local -r locale=${3:?}
     local -r lang=${4:?}
 
-    cat >$file <<'EOF'
+    cat <<EOF > "$file"
 title           Arch Linux LTS
 linux           /vmlinuz-linux-lts
 initrd          /initramfs-linux-lts.img
-options cryptdevice=$hd2:main root=/dev/mapper/main-root resume=/dev/mapper/main-swap lang=$lang locale=$locale
+options cryptdevice=${hd}2:main root=/dev/mapper/main-root resume=/dev/mapper/main-swap lang=${lang} locale=${locale}
 EOF
+}
+
+install-bootloader() {
+    local -r encrypt=${1:?}
+    local -r hd=${2:?}
+    local -r uefi=${3:?}
+    local -r locale=${4:?}
+    local -r lang=${5:?}
+
+    if [ "$encrypt" = 1 ]; then
+      # Not encrypted boot partition with grub
+      [[ "$uefi" = 0 ]]  \
+      && log INFO "INSTALL GRUB ON $hd WITH UEFI" "$output" \
+      || log INFO "INSTALL GRUB ON $hd WITHOUT UEFI" "$output" \
+      install-grub "$hd" "$uefi"
+
+    else
+      # Encrypted boot partition with systemd-boot
+      [[ "$uefi" = 0 ]]  \
+      && log INFO "INSTALL SYSTEMD-BOOT ON $hd WITH UEFI" "$output" \
+      || log INFO "INSTALL SYSTEMD-BOOT ON $hd WITHOUT UEFI" "$output"
+      install-systemd-boot "$hd" "$uefi" "$locale" "$lang"
+    fi
 }
 
 set-timezone() {
