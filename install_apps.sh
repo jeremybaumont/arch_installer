@@ -59,7 +59,7 @@ add-multilib-repo() {
 }
 
 dialog-welcome() {
-    dialog --title "Welcome!" --msgbox "Welcome to Phantas0s dotfiles and software installation script for Arch linux.\n" 10 60
+    dialog --title "Welcome!" --msgbox "Welcome to dotfiles and software installation script for Arch linux.\n" 10 60
 }
 
 dialog-choose-apps() {
@@ -82,23 +82,29 @@ dialog-choose-apps() {
         "notify" "Notifications with dunst & libnotify" on
         "gtk" "GTK 3 themes and icons" on
         "programming" "Programming environments (PHP, Ruby, Go, Docker, Clojure)" on
-        "keepass" "Keepass" on
-        "sql" "Mysql (mariadb) & mysql tools" on
+        "keepass" "Keepass" off
+        "sql" "Mysql (mariadb) & mysql tools" off
         "office" "Office tools (Libreoffice...)" off
         "multimedia" "Multimedia" off
         "videography" "Video creation" off
         "graphism" "Design" off
         "photography" "Photography tools" off
-        "firefox" "Firefox (browser)" off
+        "firefox" "Firefox (browser)" on
+        "chrome" "Google Chrome (browser)" off
+        "vpn" "Express vpn" off
         "brave" "brave (browser)" off
         "newsboat" "RSS Feed Reader" on
         "joplin" "Note taking system" off
+        "obsidian" "Note taking system" off
+        "slack" "Instant messaging system" off
+        "discord" "Instant messaging system" off
+        "zoom" "Video call and messaging system" off
         "thunar" "Graphical file manager" off
         "thunderbird" "Thunderbird" off
         "pandoc" "Pandoc and usefull dependencies" off
         "syncthing" "Sync files via P2P" off
         "rover" "Simple file browser for the terminal" off
-        "language" "Language tools" off
+        "language" "Language tools" on
         "nextcloud" "Nextcloud client" off
         "hugo" "Hugo static site generator" off
         "freemind" "Freemind - mind mapping software" off

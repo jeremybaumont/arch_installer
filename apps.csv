@@ -1,0 +1,361 @@
+audio,alsa-utils,Utils to control sound card
+audio,pavucontrol,Control panel for input hardware
+audio,pipewire-alsa,Sound Architecture
+audio,pipewire,Low level multimedia framework
+audio,pipewire-pulse,Sound Middleware
+audio,pulseaudio-alsa,ALSA Configuration for PulseAudio
+audio,pulseaudio-bluetooth,Bluetooth support for PulseAudio
+audio,pulsemixer,Alternative to pavucontrol in terminal
+brave,brave-bin,Browser Brave (AUR)
+chrome,google-chrome-beta,The popular web browser by Google (Beta Channel)
+compression,p7zip,Compress / uncompress 7z files
+compression,unzip,Compress / uncompress zip files
+discord,discord,All-in-one voice and text chat for gamers
+doublecmd,doublecmd,Graphical file manager
+essential,autoconf,A GNU tool for automatically configuring source code
+essential,automake,A GNU tool for automatically creating Makefiles
+essential,base,Minimal package set to define a basic Arch Linux installation
+essential,binutils,A set of programs to assemble and manipulate binary and object files
+essential,bison,The GNU general-purpose parser generator
+essential,fakeroot,Tool for simulating superuser privileges
+essential,gcc,The GNU Compiler Collection - C and C++ frontends
+essential,gdb,The GNU Debugger
+essential,gettext,GNU internationalization library
+essential,grep,A string search utility
+essential,libtool,A generic library support script
+essential,linux-firmware,Firmware files for Linux
+essential,linux-headers,Headers and scripts for building modules for the Linux kernel
+essential,linux-lts,The LTS Linux kernel and modules
+essential,linux,The Linux kernel and modules
+essential,m4,The GNU macro processor
+essential,make,GNU make utility to maintain groups of programs
+essential,man-db,A utility for reading man pages
+essential,man,Manual
+essential,man-pages,Manual pages
+essential,mesa-libgl,opengl
+essential,mtools,A collection of utilities to access MS-DOS disks
+essential,openssh,Remote login tool for SSH protocol
+essential,pacman,A library-based package manager with dependency support
+essential,pacman-contrib,Contributed scripts and tools for pacman systems
+essential,patch,A utility to apply patch files to original sources
+essential,pkgconf,Package compiler and linker metadata toolkit
+essentials,flex,A tool for generating text-scanning programs
+essential,sudo,Give certain users the ability to run some commands as root
+essential,sysstat,a collection of performance monitoring tools (iostat,isag,mpstat,pidstat,sadf,sar)
+essential,tldr,Examples for CLIs
+essential,which,A utility to show the full path of commands
+essential,xdot,Interactive viewer for graphs written in Graphviz's dot language
+essential,xf86-video-vesa,X.org vesa video driver
+essential,xfig,An interactive drawing tool
+essential,xorg-bdftopcf,Convert X font from Bitmap Distribution Format to Portable Compiled Format
+essential,xorg-docs,X.org documentations
+essential,xorg-fonts-100dpi,X.org 100dpi fonts
+essential,xorg-fonts-75dpi,X.org 75dpi fonts
+essential,xorg-fonts-encodings,X.org font encoding files
+essential,xorg-font-util,X.Org font utilities
+essential,xorg-iceauth,ICE authority file utility
+essential,xorg-mkfontscale,Create an index of scalable font files for X
+essential,xorg-server-common,Xorg server common files
+essential,xorg-server-devel,Development files for the X.Org X server
+essential,xorg-server-xephyr,A nested X server that runs as an X application
+essential,xorg-server-xnest,A nested X server that runs as an X application
+essential,xorg-server,Xorg X server
+essential,xorg-server-xvfb,Virtual framebuffer X server
+essential,xorg-sessreg,Register X sessions in system utmp/utmpx databases
+essential,xorg-setxkbmap,Set the keyboard using the X Keyboard Extension
+essential,xorg-smproxy,Allows X applications that do not support X11R6 session management to participate in an X11R6 session
+essential,xorg-x11perf,Simple X server performance benchmarker
+essential,xorg-xauth,X.Org authorization settings program
+essential,xorg-xbacklight,RandR-based backlight control application
+essential,xorg-xcmsdb,Device Color Characterization utility for X Color Management System
+essential,xorg-xcursorgen,Create an X cursor file from PNG images
+essential,xorg-xdpyinfo,Display information utility for X
+essential,xorg-xdriinfo,Query configuration information of DRI drivers
+essential,xorg-xev,Print contents of X events
+essential,xorg-xgamma,Alter a monitor's gamma correction
+essential,xorg-xhost,Server access control program for X
+essential,xorg-xinit,Display server boot
+essential,xorg-xinput,Small commandline tool to configure devices
+essential,xorg-xkbcomp,X Keyboard description compiler
+essential,xorg-xkbevd,XKB event daemon
+essential,xorg-xkbutils,XKB utility demos
+essential,xorg-xkill,Kill a client by its X resource
+essential,xorg-xlsatoms,List interned atoms defined on server
+essential,xorg-xlsclients,List client applications running on a display
+essential,xorg-xmodmap,Utility for modifying keymaps and button mappings
+essential,xorg-xprop,Property displayer for X
+essential,xorg-xpr,Print an X window dump from xwd
+essential,xorg-xrandr,Primitive command line interface to RandR extension
+essential,xorg-xrdb,X server resource database utility
+essential,xorg-xrefresh,Refresh all or part of an X screen
+essential,xorg,X server
+essential,xorg-xsetroot,Classic X utility to set your root window background to a given pattern or color
+essential,xorg-xset,User preference utility for X
+essential,xorg-xvinfo,Prints out the capabilities of any video adaptors associated with the display that are accessible through the X-Video extension
+essential,xorg-xwayland,run X clients under wayland
+essential,xorg-xwd,X Window System image dumping utility
+essential,xorg-xwininfo,Command-line utility to print information about windows on an X server
+essential,xorg-xwud,X Window System image undumping utility
+firefox,firefox,Browser Firefox
+freemind,freemind,Free mind mapping software in Java
+gaming,lutris,Open gaming plateform
+gaming,steam,Video game distribution service
+gaming,ttf-liberation,Fonts for steam
+git,diff-so-fancy,Human readable git diff
+git,git,Version control system
+graphism,drawio-desktop,Desktop diagramming application (AUR)
+graphism,gcolor2,Simple color selector
+graphism,gimp,Image processor
+graphism,gimp-plugin-gmic,Filters for gimp
+graphism,libwebp,Image converter from jpg to webp
+graphism,pinta,Easy to use image editor
+graphism,sxiv,Simple X image viewer
+gtk,flatery-icon-theme-git,GTK icons (AUR)
+gtk,gtk-theme-arc-red,Desktop theme... but in red! (AUR)
+gtk,gtk-theme-shades-of-gray,GTK themes (AUR)
+hugo,hugo,Static site generator written in Go
+i3,arc-gtk-theme,GTK themes
+i3,dmenu,Dynamic menu for X
+i3,feh,X11 image viewer
+i3,i3lock,i3 lock monitor
+i3,i3status,i3 status bar
+i3,i3-wm,i3 window tile manager
+i3,rofi,A window switcher, application launcher and dmenu replacement
+i3,xdg-utils,Allow application to interact with the desktop
+joplin,joplin-desktop,Note taking app open source (AUR)
+keepass,keepassxc,Secure password management
+keyring,gnome-keyring,Gnome component to store passwords
+keyring,libsecret,Library for application to use gnome keyring
+keyring,seahorse,Gnome keyring GUI
+language,anki,Powerful intelligent flash cards (AUR)
+language,ccls,C/C++/ObjC language server supporting cross references, hierarchies, completion and semantic highlighting
+language,clang,C language family frontend for LLVM
+language,dictd,Dictionary database server
+language,exercism,Command line tool for exercism.io
+language,groff,GNU troff text-formatting system
+language,ibazel,Tool for building Bazel targets when source files change.
+language,jdk11-openjdk,OpenJDK Java 11 development kit
+language,lldb,Next generation, high-performance debugger
+language,lld,Linker from the LLVM project
+language,llvm10,Collection of modular and reusable compiler and toolchain technologies
+language,lua-lsp-git,A Lua language server
+language,lvm2,Logical Volume Manager 2 utilities
+language,minted,Syntax highlighted source code for LaTeX
+language,mvnvm,Maven version manager
+language,pyenv,Easily switch between multiple versions of Python
+language,pyenv-virtualenv,pyenv plugin to manage virtualenv (a.k.a. python-virtualenv)
+language,python2-pycparser,C parser and AST generator written in Python
+language,python-protobuf,Python 3 bindings for Google Protocol Buffers
+language,python-pynvim,Python client for Neovim
+language,python-virtualenv,Virtual Python Environment builder
+language,rust-analyzer,Rust compiler front-end for IDEs
+language,tcl,Powerful, easy-to-learn dynamic programming language
+language,texinfo,GNU documentation system for on-line information and printed output
+language,texlive-basic,TeX Live - Essential programs and files
+language,texlive-bin,TeX Live binaries
+language,texlive-latexextra,TeX Live - LaTeX additional packages
+language,texlive-pictures,TeX Live - Graphics, pictures, diagrams
+language,tk,A windowing toolkit for use with tcl
+language,translate-shell,Command line translator
+language,tree-sitter,Incremental parsing library
+language,ttf-dejavu,Font family based on the Bitstream Vera Fonts with a wider range of characters
+language,typescript-language-server,Language Server Protocol (LSP) implementation for TypeScript using tsserver
+multimedia,deadbeef,Clone of Foobar2000 music player
+multimedia,ffmpeg,Complete solution to record stream audio / video
+multimedia,lltag,Tag Manager (AUR)
+multimedia,mpv,Free video player
+neovim,neovim,Editor... and much more
+neovim,python2-neovim-git,Python client to neovim, git version. Use this to keep up with neovim-git
+neovim,python2-neovim,Python2 for neovim
+neovim,python-neovim,Python for neovim
+neovim,ruby-neovim,Ruby for neovim (AUR)
+neovim,vim,Vi Improved, a highly configurable, improved version of the vi text editor
+network,dhclient,A standalone DHCP client from the dhcp package
+network,dmidecode,Desktop Management Interface table related utilities
+network,dnsmasq,Lightweight, easy to configure DNS forwarder and DHCP server
+network,iftop,Display bandwidth usage on an interface
+network,inetutils,A collection of common network programs
+network,iwd,Internet Wireless Daemon
+network,lsof,Lists open files for running Unix processes
+network,net-tools,Include netstats and others
+network,network-manager-applet,Applet for managing network connections
+network,networkmanager,Network manager
+network,networkmanager-openconnect,NetworkManager VPN plugin for OpenConnect
+network,nmap,Network mapper (comes with ncat too)
+network,openvpn,VPN
+network,traceroute,Tracks the route taken by packets over an IP network
+network,wget,Tool for retrieving files using HTTP HTTPS FTP and FTPS
+newsboat,newsboat,RSS feed reader
+nextcloud,nextcloud-client,Client to nextcloud
+notify,dunst,Notification system
+notify,libnotify,Notifier
+obsidian,obsidian,A powerful knowledge base that works on top of a local folder of plain text Markdown files
+obsidian,obsidian-icon-theme,Obsidian icon theme
+office,calibre,Managing ebooks
+office,libreoffice,Office suite
+office,okular,PDF reader
+office,pdfarranger,Merge PDFs
+office,scribus,Document editing software
+office,zathura-pdf-mupdf,Highly customizable PDF reader
+pandoc,lua-lpeg,Necessary library for Pandoc Lua filters
+pandoc,pandoc,Document converter
+pandoc,python-panflute,Useful for some Pandoc python scripts
+pandoc,texlive-most-doc,Most doc for LaTex (AUR)
+pandoc,texlive-most,Tex Document Production System
+photography,breeze-icons,Icons for digikam
+photography,darktable,RAW developer
+photography,digikam,Photo organizer and developer
+photography,displaycal,Display calibration software
+photography,xf86-input-wacom,Drivers for Wacom tablet
+programming,bash-language-server,bash language server (AUR)
+programming,clj-kondo-bin,Clojure static analysis
+programming,clojure-lsp-bin,Clojure language server (AUR)
+programming,composer,Dependency management for PHP
+programming,ctags,Generates an index file of language objects found in source files
+programming,docker,Build ship and run distributed applications
+programming,docker-compose,Orchestration for docker
+programming,go,Golang programming language
+programming,golangci-lint,Fast linter for Golang (AUR)
+programming,gopls,Golang language server
+programming,goreleaser,Release tool for Golang (AUR)
+programming,go-tools,Tools for Golang
+programming,leiningen,REPL for Clojure
+programming,ltex-ls-bin,Language server for grammar (AUR)
+programming,lua-language-server,Lua language server
+programming,lua,Lua programming language
+programming,npm,Infamous javascript package manager
+programming,nvm,Change node version (AUR)
+programming,phpmd,PHP mess detector (AUR)
+programming,php,PHP programming language
+programming,phpstan,PHP static analysis tool (AUR)
+programming,python-lsp-server,Python language server (AUR)
+programming,racket,Language Racket
+programming,rlwrap,Intercepting user input (used for Clojure cli)
+programming,ruby,Ruby programming language
+programming,shellcheck-bin,linter for the shell (AUR)
+programming,sql-language-server,sql language server (AUR)
+programming,vint,Linter for VimScript
+programming,vscode-eslint-language-server,eslint language server (AUR)
+programming,yamllint,Linter for yaml
+programming,yarn,Wrapper for npm
+qutebrowser,qutebrowser,Mouseless browser
+ripgrep,ripgrep,Line oriented search tool (grep improved)
+rover,rover,Simple file browser for the terminal (AUR)
+slack,slack-desktop,Slack Desktop (Beta) for Linux
+sql,litecli,Command line interface for SQLite (AUR)
+sql,mariadb,Implementation of Mysql
+sql,mycli,Command line interface for MySQL (AUR)
+sql,pgcli,Command line interface for PostgreSQL (AUR)
+sql,postgresql,Implementation of PostgreSQL
+syncthing,syncthing,Syncing files between devices
+thunderbird,thunderbird,Thunderbird
+tmux,tmuxp,Configure tmux session + windows + panes via config files
+tmux,tmux,Terminal multiplexer
+tools,arandr,xrandr GUI
+tools,arping-th,ARP Ping from Thomas Habets (aka Debian arping)
+tools,atuin,Magical shell history
+tools,bat,Cat clone with syntax highlighting and git integration
+tools,bc,Calculator
+tools,bcc-tools,BPF Compiler Collection - Tools
+tools,bcwc-pcie-git,Reverse engineered Linux driver for the Broadcom 1570 PCIe webcam.
+tools,bind,A complete, highly portable implementation of the DNS protocol
+tools,bluez-utils,Development and debugging utilities for the bluetooth protocol stack
+tools,boxes,Draw ASCII boxes in terminal - ESSENTIAL! (AUR)
+tools,bpftrace,High-level tracing language for Linux eBPF
+tools,bpytop,Resource monitor that shows usage and stats for processor, memory, disks, network and processes
+tools,broadcom-wl-dkms,Broadcom 802.11 Linux STA wireless driver
+tools,cnijfilter-ts7450series,Canon IJ Printer Driver for Linux for Pixma 7450 series and other based on 6.10 version
+tools,cups,OpenPrinting CUPS - daemon package
+tools,deepin-printer,Printer configuration project for DDE
+tools,dialog,A tool to display dialog boxes from shell scripts
+tools,downgrade,Utility to downgrade Arch packages (AUR)
+tools,duf,Disk analyzer
+tools,fd,Simple, fast and user-friendly alternative to find
+tools,file,File type identification utility
+tools,findutils,GNU utilities to locate files
+tools,flameshot,Powerful yet simple to use screenshot software
+tools,fortune-mod,The Fortune Cookie Program from BSD games
+tools,fzf,Command line fuzzy finder
+tools,gawk,GNU version of awk
+tools,github-cli,The GitHub CLI
+tools,glow,Command-line markdown renderer
+tools,gnu-netcat,GNU rewrite of netcat, the network piping application
+tools,gparted,Partitioning tool
+tools,graphviz,Graph visualization software
+tools,gzip,GNU compression utility
+tools,handlr-bin,Powerful alternative to xdg-utils written in Rust
+tools,htop,Interactive process viewer
+tools,httpie,a CLI cURL-like tool for humans
+tools,imagemagick,Convert edit or compose images
+tools,irssi,Modular text mode IRC client with Perl scripting
+tools,jq,Command-line JSON processor
+tools,libbpf,Library for loading eBPF programs and reading and manipulating eBPF objects from user-space
+tools,libvirt,API for controlling virtualization engines (openvz,kvm,qemu,virtualbox,xen,etc)
+tools,lsdesktopf,List available *.desktop files and search in their content.
+tools,lxappearance,Theme switcher of LXDE
+tools,ncdu,Disk usage analyzer with an ncurses interface
+tools,neofetch,Get system specs
+tools,nerd-fonts-git,Iconic font aggregator, collection, and patcher
+tools,ninja,Small build system with a focus on speed
+tools,noto-fonts-cjk,Fonts for asian display
+tools,noto-fonts-emoji,Fonts for emojis
+tools,ntfs-3g,Filesystem
+tools,numlockx,Keylock manager
+tools,pacleaner,Script to clean up pacman cache in a more flexible way than with paccache or pacman itself. Fully configurable and flexible
+tools,pandoc-cli,Conversion between documentation formats
+tools,peek,Simple screen recorder with an easy to use interface
+tools,picom,Compositor for X - manage transparency
+tools,polkit,Control system wide privilege
+tools,pv,Display progress bar through pipeline
+tools,python-bcc,BPF Compiler Collection - Python 3 bindings
+tools,qemu-base,A basic QEMU setup for headless environments
+tools,qtkeychain,Qt API to store passwords
+tools,redshift,Adjust color of screen
+tools,rsync,Tool for transferring and synchronizing files across computer systems
+tools,scrot,Screenshot software for i3lock
+tools,sed,GNU stream editor
+tools,shellcheck,Shell script analysis tool
+tools,simple-mtpfs,Can mount MTP filesystems (thanks Android) (AUR)
+tools,strace,A diagnostic, debugging and instructional userspace tracer
+tools,system-config-printer,A CUPS printer configuration tool and status applet
+tools,sysz,Use fzf to find systemd units (AUR)
+tools,taplo-cli,TOML toolkit written in Rust
+tools,taskell,CLI kanban
+tools,the_silver_searcher,A fast code searching tool
+tools,time,Measure time takes a specific command
+tools,tmpmail-git,A temporary email right from your terminal
+tools,tree,List FS in tree-like format
+tools,udiskie,Automount devices
+tools,unclutter,Hide the mouse after short period of time
+tools,unetbootin,Create bootable Live USB drives
+tools,vagrant,Build and distribute virtualized development environments
+tools,virt-install,Command line tool for creating new KVM , Xen, or Linux container guests using the libvirt hypervisor
+tools,virt-manager,Desktop user interface for managing virtual machines
+tools,virt-viewer,A lightweight interface for interacting with the graphical display of virtualized guest OS.
+tools,vlc,Multi-platform MPEG, VCD/DVD, and DivX player
+tools,vnstat,A console-based network traffic monitor
+tools,wabt,The WebAssembly Binary Toolkit is a suite of tools for WebAssembly
+tools,wasm3-git,A high performance WebAssembly interpreter written in C
+tools,wasm-pack,Your favorite rust -> wasm workflow tool!
+tools,watchexec,Executes commands in response to file modifications
+tools,whois,Display web domain information
+tools,wireshark-git,A free network protocol analyzer for Unix/Linux. GIT version
+tools,xcape,Configure modifier key
+tools,xclip,CLI to Clipboard
+tools,xdg-ninja,Verify files which can go to xdg config (AUR)
+tools,xsel,Manipulate the X selection
+tools,zk,A command-line tool helping you to maintain a Zettelkasten or personal wiki
+tools,zoom,Video Conferencing and Web Conferencing Service
+urxvt,rxvt-unicode,Terminal Urxvt
+urxvt,urxvt-resize-font-git,Increase / decrease font size for Urxvt via keystrokes(AUR)
+urxvt,urxvt-tabbedex-mina86-git,Improved tab for Urxvt (AUR)
+videography,losslesscut-bin,Simple video edition (AUR)
+videography,obs-studio,GUI for ffmpeg
+vmware,open-vm-tools,vmware tools
+vmware,xf86-input-vmmouse,vmware mouse
+vmware,xf86-video-vmware,vmware video
+vpn,expressvpn,Proprietary VPN client for Linux
+zoom,zoxide,A smarter cd command for your terminal
+zsh,zsh-completions,Additional completion definitions for Zsh
+zsh,zsh-syntax-highlighting,Fish shell like syntax highlighting for Zsh
+zsh,zsh,Unix shell (Z-Shell)
